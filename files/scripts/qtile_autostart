@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+## Copyright (C) 2020-2023 Aditya Shakya <adi1090x@gmail.com>
+##
+## Autostart Programs
+
+# qtile dir
+qdir="$HOME/.config/qtile"
+
+# Kill already running process
+_ps=(xsettingsd ksuperkey)
+for _prs in "${_ps[@]}"; do
+	if [[ `pidof ${_prs}` ]]; then
+		killall -9 ${_prs}
+	fi
+done
+
+# Lauch xsettingsd daemon
+xsettingsd --config="$qdir"/xsettingsd &
+
+# polkit agent
+if [[ ! `pidof xfce-polkit` ]]; then
+	/usr/lib/xfce-polkit/xfce-polkit &
+fi
+
+# Enable power management
+xfce4-power-manager &
+
+# Enable Super Keys For Menu
+ksuperkey -e 'Super_L=Alt_L|F1' &
+ksuperkey -e 'Super_R=Alt_L|F1' &
+
+# Fix cursor
+xsetroot -cursor_name left_ptr
+
+# Restore wallpaper
+"$qdir"/scripts/qtile_wallpaper
+
+# Lauch notification daemon
+"$qdir"/scripts/qtile_dunst
+
+# Lauch polybar
+"$qdir"/scripts/qtile_bar
+
+# Lauch compositor
+"$qdir"/scripts/qtile_comp
+
+# Start mpd
+exec mpd &
