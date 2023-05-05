@@ -1,0 +1,2 @@
+# archcraft-qtile
+// Configuration : qtile
