@@ -4,8 +4,8 @@
 
 # Import Current Theme
 DIR="$HOME/.config/qtile"
-RASI="$DIR/rofi/powermenu.rasi"
-CNFR="$DIR/rofi/confirm.rasi"
+RASI="$DIR/theme/rofi/powermenu.rasi"
+CNFR="$DIR/theme/rofi/confirm.rasi"
 
 # Theme Elements
 prompt="`hostname` (`echo $DESKTOP_SESSION`)"

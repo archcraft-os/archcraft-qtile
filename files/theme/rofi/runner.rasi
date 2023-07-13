@@ -9,7 +9,7 @@
 
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "drun,run,filebrowser";
+	modi:                       "run";
     show-icons:                 true;
     display-drun:               "";
     display-run:                "";
@@ -30,7 +30,7 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       600px;
+    width:                       500px;
     x-offset:                    0px;
     y-offset:                    0px;
 
@@ -64,17 +64,17 @@ listbox {
 inputbar {
     enabled:                     true;
     spacing:                     10px;
-    padding:                     80px 60px;
+    padding:                     70px 50px;
     background-color:            transparent;
-    background-image:            url("~/.config/qtile/rofi/images/img_1.jpg", width);
+    background-image:            url("~/.config/qtile/theme/rofi/images/img_2.jpg", width);
     text-color:                  @foreground;
     orientation:                 horizontal;
-    children:                    [ "textbox-prompt-colon", "entry", "dummy", "mode-switcher" ];
+    children:                    [ "textbox-prompt-colon", "dummy", "entry" ];
 }
 textbox-prompt-colon {
     enabled:                     true;
     expand:                      false;
-    str:                         "";
+    str:                         "";
     padding:                     12px 15px;
     border-radius:               100%;
     background-color:            @background-alt;
@@ -89,7 +89,7 @@ entry {
     background-color:            @background-alt;
     text-color:                  inherit;
     cursor:                      text;
-    placeholder:                 "Search";
+    placeholder:                 "Run...";
     placeholder-color:           inherit;
 }
 dummy {
@@ -121,7 +121,7 @@ button selected {
 listview {
     enabled:                     true;
     columns:                     1;
-    lines:                       6;
+    lines:                       5;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;

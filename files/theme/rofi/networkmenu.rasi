@@ -9,8 +9,8 @@
 
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "run";
-    show-icons:                 true;
+	modi:                       "drun";
+    show-icons:                 false;
     display-drun:               "";
     display-run:                "";
     display-filebrowser:        "";
@@ -30,7 +30,8 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       500px;
+    width:                       600px;
+    height:                      625px;
     x-offset:                    0px;
     y-offset:                    0px;
 
@@ -64,21 +65,29 @@ listbox {
 inputbar {
     enabled:                     true;
     spacing:                     10px;
-    padding:                     70px 50px;
+    padding:                     80px 60px;
     background-color:            transparent;
-    background-image:            url("~/.config/qtile/rofi/images/img_2.jpg", width);
+    background-image:            url("~/.config/qtile/theme/rofi/images/img_3.jpg", width);
     text-color:                  @foreground;
     orientation:                 horizontal;
-    children:                    [ "textbox-prompt-colon", "dummy", "entry" ];
+    children:                    [ "textbox-prompt-colon", "prompt", "dummy", "entry" ];
+}
+prompt {
+    enabled:                     true;
+    expand:                      false;
+    padding:                     12px 15px;
+    border-radius:               100%;
+    background-color:            @selected;
+    text-color:                  @background;
 }
 textbox-prompt-colon {
     enabled:                     true;
     expand:                      false;
-    str:                         "";
+    str:                         "直";
     padding:                     12px 15px;
     border-radius:               100%;
-    background-color:            @background-alt;
-    text-color:                  inherit;
+    background-color:            @active;
+    text-color:                  @background;
 }
 entry {
     enabled:                     true;
@@ -89,7 +98,7 @@ entry {
     background-color:            @background-alt;
     text-color:                  inherit;
     cursor:                      text;
-    placeholder:                 "Run...";
+    placeholder:                 "";
     placeholder-color:           inherit;
 }
 dummy {
@@ -121,7 +130,7 @@ button selected {
 listview {
     enabled:                     true;
     columns:                     1;
-    lines:                       5;
+    lines:                       6;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
@@ -140,7 +149,7 @@ listview {
 element {
     enabled:                     true;
     spacing:                     10px;
-    padding:                     4px;
+    padding:                     10px;
     border-radius:               0%;
     background-color:            transparent;
     text-color:                  @foreground;

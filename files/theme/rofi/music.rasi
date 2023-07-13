@@ -17,7 +17,7 @@ configuration {
 @import                          "shared/fonts.rasi"
 
 /*
-USE_ICON=NO
+USE_ICON=YES
 */
 
 /*****----- Main Window -----*****/
@@ -26,7 +26,7 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       600px;
+    width:                       800px;
     x-offset:                    0px;
     y-offset:                    0px;
     margin:                      0px;
@@ -41,26 +41,23 @@ window {
 /*****----- Main Box -----*****/
 mainbox {
     enabled:                     true;
-    spacing:                     15px;
+    spacing:                     20px;
     margin:                      0px;
-    padding:                     30px;
+    padding:                     20px;
     background-color:            transparent;
-    orientation:                 horizontal;
-    children:                    [ "imagebox", "listview" ];
-}
-
-/*****----- Imagebox -----*****/
-imagebox {
-    background-color:            transparent;
-    background-image:            url("~/.config/qtile/rofi/images/img_6.jpg", width);
-    children:                    [ "dummy", "inputbar", "dummy" ];
+    children:                    [ "inputbar", "listview", "message" ];
 }
 
 /*****----- Inputbar -----*****/
 inputbar {
     enabled:                     true;
-    spacing:                     15px;
+    spacing:                     25px;
+    padding:                     100px 50px;
+    border:                      0px;
+    border-radius:               0px;
+    border-color:                @selected;
     background-color:            transparent;
+    background-image:            url("~/.config/qtile/theme/rofi/images/img_4.jpg", width);
     text-color:                  @foreground;
     children:                    [ "dummy", "textbox-prompt-colon", "prompt", "dummy"];
 }
@@ -71,16 +68,16 @@ dummy{
 textbox-prompt-colon {
     enabled:                     true;
     expand:                      false;
-    str:                         "";
+    str:                         "";
     padding:                     10px 13px;
-    border-radius:               0px;
+    border-radius:               20px;
     background-color:            @selected;
     text-color:                  @background;
 }
 prompt {
     enabled:                     true;
     padding:                     10px;
-    border-radius:               0px;
+    border-radius:               20px;
     background-color:            @background-alt;
     text-color:                  @foreground;
 }
@@ -100,19 +97,19 @@ textbox {
     background-color:            inherit;
     text-color:                  inherit;
     vertical-align:              0.5;
-    horizontal-align:            0.0;
+    horizontal-align:            0.5;
 }
 
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     1;
-    lines:                       5;
+    columns:                     6;
+    lines:                       1;
     cycle:                       true;
     scrollbar:                   false;
     layout:                      vertical;
     
-    spacing:                     5px;
+    spacing:                     20px;
     background-color:            transparent;
     cursor:                      "default";
 }
@@ -120,7 +117,7 @@ listview {
 /*****----- Elements -----*****/
 element {
     enabled:                     true;
-    padding:                     10px;
+    padding:                     30px 10px;
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @selected;
@@ -129,16 +126,17 @@ element {
     cursor:                      pointer;
 }
 element-text {
+    font:                        "feather 28";
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;
     vertical-align:              0.5;
-    horizontal-align:            0.0;
+    horizontal-align:            0.5;
 }
 
 element normal.normal,
 element alternate.normal {
-    background-color:            var(background);
+    background-color:            var(background-alt);
     text-color:                  var(foreground);
 }
 element normal.urgent,

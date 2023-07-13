@@ -6,7 +6,7 @@ follow = mouse
 width = 300
 height = 80
 origin = top-right
-offset = 10x60
+offset = 20x60
 corner_radius = 0
 scale = 0
 notification_limit = 0
@@ -56,13 +56,13 @@ class = Dunst
 timeout = 2
 background = "#2e3440"
 foreground = "#D8DEE9"
-frame_color = "#81a1c1"
+frame_color = "#81A1C1"
 
 [urgency_normal]
 timeout = 5
 background = "#2e3440"
 foreground = "#D8DEE9"
-frame_color = "#81a1c1"
+frame_color = "#81A1C1"
 
 [urgency_critical]
 timeout = 0

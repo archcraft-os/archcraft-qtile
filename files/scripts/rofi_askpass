@@ -4,7 +4,7 @@
 
 # Import Current Theme
 DIR="$HOME/.config/qtile"
-RASI="$DIR/rofi/askpass.rasi"
+RASI="$DIR/theme/rofi/askpass.rasi"
 
 # Rofi text dialog to get password
 rofi -dmenu \

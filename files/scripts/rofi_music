@@ -4,7 +4,7 @@
 
 # Import Current Theme
 DIR="$HOME/.config/qtile"
-RASI="$DIR/rofi/music.rasi"
+RASI="$DIR/theme/rofi/music.rasi"
 
 # Theme Elements
 status="`mpc status`"

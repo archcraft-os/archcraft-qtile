@@ -2,7 +2,7 @@
 
 pkgname=archcraft-qtile
 pkgver=1.0
-pkgrel=0
+pkgrel=1
 pkgdesc="Qtile Configurations for Archcraft"
 url="https://github.com/archcraft-os/archcraft-qtile"
 arch=('any')
@@ -16,6 +16,7 @@ depends=('qtile' 'python-pywlroots' 'python-dbus-next' 'hsetroot'
 		'ksuperkey' 
 		'betterlockscreen'
 		'xfce4-power-manager' 
+		'xsettingsd'
 		'xorg-xsetroot'
 		'wmname'
 		'pulsemixer' 'light' 'xcolor'
@@ -33,15 +34,15 @@ package() {
 	local _config=${pkgdir}/etc/skel/.config/qtile
 	mkdir -p "$_config"
 
-	# Copy i3wm config files
+	# Copy qtile config files
 	cp -r ${srcdir}/alacritty 		"$_config"
-	cp -r ${srcdir}/polybar 		"$_config"
-	cp -r ${srcdir}/rofi 			"$_config"
 	cp -r ${srcdir}/scripts 		"$_config"
-	cp -r ${srcdir}/wallpapers 		"$_config"
+	cp -r ${srcdir}/theme 			"$_config"
 
 	chmod +x "$_config"/scripts/*
-	chmod +x "$_config"/polybar/launch.sh
+	chmod +x "$_config"/theme/polybar.sh
+	chmod +x "$_config"/theme/polybar/launch.sh
+	chmod +x "$_config"/theme/polybar/scripts/bluetooth.sh
 
 	install -Dm 644 config.py   			"$_config"/config.py
 	install -Dm 644 dunstrc   				"$_config"/dunstrc

@@ -4,7 +4,7 @@
 
 # Import Current Theme
 DIR="$HOME/.config/qtile"
-RASI="$DIR/rofi/runner.rasi"
+RASI="$DIR/theme/rofi/runner.rasi"
 
 # Run
 rofi \

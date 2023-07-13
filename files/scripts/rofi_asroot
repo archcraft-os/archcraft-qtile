@@ -4,7 +4,7 @@
 
 # Import Current Theme
 DIR="$HOME/.config/qtile"
-RASI="$DIR/rofi/asroot.rasi"
+RASI="$DIR/theme/rofi/asroot.rasi"
 ASROOT="$DIR/scripts/qtile_asroot"
 
 # Theme Elements

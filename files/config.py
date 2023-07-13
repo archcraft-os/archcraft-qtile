@@ -123,6 +123,11 @@ keys = [
 		desc="Run application launcher"
 	),
     Key(
+		["mod1"], "F2", 
+		lazy.spawn(rofi_applets + 'rofi_runner'), 
+		desc="Run command runner"
+	),
+    Key(
 		[mod], "n", 
 		lazy.spawn(rofi_applets + 'network_menu'), 
 		desc="Run network manager applet"
@@ -466,17 +471,21 @@ for i in groups:
 
 ## Layouts ------------------------------
 var_bg_color = '#2e3440'
-var_active_bg_color = '#81a1c1'
+var_active_bg_color = '#81A1C1'
 var_active_fg_color = '#2e3440'
-var_inactive_bg_color = '#3b4252'
+var_inactive_bg_color = '#3d4555'
 var_inactive_fg_color = '#D8DEE9'
-var_urgent_bg_color = '#bf616a'
+var_urgent_bg_color = '#BF616A'
 var_urgent_fg_color = '#D8DEE9'
-var_section_fg_color = '#ebcb8b'
-var_active_color = '#81a1c1'
-var_normal_color = '#4c566a'
+var_section_fg_color = '#EBCB8B'
+var_active_color = '#81A1C1'
+var_normal_color = '#3d4555'
 var_border_width = 2
 var_margin = [5,5,5,5]
+var_gap_top = 45
+var_gap_bottom = 5
+var_gap_left = 5
+var_gap_right = 5
 var_font_name = 'JetBrainsMono Nerd Font'
 
 layouts = [
@@ -745,9 +754,10 @@ screens = [
 # Any third-party statusbar (polybar) with Gaps
 screens = [
     Screen(
-        right=bar.Gap(5),
-        left=bar.Gap(5),
-        bottom=bar.Gap(5)
+        right=bar.Gap(var_gap_right),
+        left=bar.Gap(var_gap_left),
+        bottom=bar.Gap(var_gap_bottom),
+        top=bar.Gap(var_gap_top)
     )
 ]
 
