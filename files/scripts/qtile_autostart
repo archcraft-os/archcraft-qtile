@@ -34,7 +34,7 @@ ksuperkey -e 'Super_R=Alt_L|F1' &
 xsetroot -cursor_name left_ptr
 
 # Restore wallpaper
-hsetroot -root -cover "$qdir"/theme/wallpaper
+hsetroot -cover "$qdir"/theme/wallpaper
 
 # Lauch notification daemon
 "$qdir"/scripts/qtile_dunst
