@@ -1,8 +1,8 @@
 # Maintainer: Aditya Shakya <adi1090x@gmail.com>
 
 pkgname=archcraft-qtile
-pkgver=1.0
-pkgrel=2
+pkgver=2.0
+pkgrel=0
 pkgdesc="Qtile Configurations for Archcraft"
 arch=('any')
 url="https://github.com/archcraft-os/archcraft-qtile"

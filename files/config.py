@@ -1,4 +1,4 @@
-## Copyright (C) 2020-2023 Aditya Shakya <adi1090x@gmail.com>
+## Copyright (C) 2020-2024 Aditya Shakya <adi1090x@gmail.com>
 ##
 ## `qtile` configuration for Archcraft
 
@@ -52,7 +52,7 @@ screenshot   = home + '/.config/qtile/scripts/qtile_screenshot'
 file_manager = 'thunar'
 text_editor  = 'geany'
 web_browser  = 'firefox'
-alacritty    = 'alacritty --config-file ' + home + '/.config/qtile/alacritty/alacritty.yml'
+alacritty    = 'alacritty --config-file ' + home + '/.config/qtile/alacritty/alacritty.toml'
 rofi_applets = home + '/.config/qtile/scripts/'
 notify_cmd   = 'dunstify -u low -h string:x-dunst-stack-tag:qtileconfig'
 
