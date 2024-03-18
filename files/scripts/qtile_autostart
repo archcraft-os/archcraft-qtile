@@ -7,6 +7,9 @@
 # qtile dir
 qdir="$HOME/.config/qtile"
 
+# Export desktop session
+export XDG_CURRENT_DESKTOP='qtile'
+
 # Kill already running process
 _ps=(xsettingsd ksuperkey)
 for _prs in "${_ps[@]}"; do
