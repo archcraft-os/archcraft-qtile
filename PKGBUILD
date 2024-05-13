@@ -2,7 +2,7 @@
 
 pkgname=archcraft-qtile
 pkgver=2.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Qtile Configurations for Archcraft"
 arch=('any')
 url="https://github.com/archcraft-os/archcraft-qtile"
