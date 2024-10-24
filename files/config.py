@@ -44,6 +44,7 @@ mod = "mod4"
 # Scripts/Apps Variables
 home         = os.path.expanduser('~')
 terminal     = home + '/.config/qtile/scripts/qtile_term'
+term_kitty   = home + '/.config/qtile/scripts/qtile_kitty'
 music_player = home + '/.config/qtile/scripts/qtile_music'
 color_picker = home + '/.config/qtile/scripts/qtile_colorpicker'
 brightness   = home + '/.config/qtile/scripts/qtile_brightness'
@@ -60,7 +61,7 @@ keys = [
     # A list of available commands that can be bound to keys can be found
     # at https://docs.qtile.org/en/latest/manual/config/lazy.html
 	
-	# Terminal --
+	# Terminal : alacritty --
     Key(
 		[mod], "Return", 
 		lazy.spawn(terminal), 
@@ -75,6 +76,13 @@ keys = [
 		[mod, "mod1"], "Return", 
 		lazy.spawn(terminal + ' --full'), 
 		desc="Launch fullscreen terminal with qtile configs"
+	),
+
+	# Terminal : kitty --
+    Key(
+		["control", "mod1"], "t", 
+		lazy.spawn(term_kitty), 
+		desc="Launch kitty with qtile configs"
 	),
 
 	# GUI Apps --
@@ -790,12 +798,27 @@ floating_layout = layout.Floating(
     float_rules=[
         # Run the utility of `xprop` to see the wm class and name of an X client.
         *layout.Floating.default_float_rules,
-        Match(wm_class="alacritty-float|Music"),
-        Match(wm_class="Lxappearance|Nitrogen"),
-        Match(wm_class="Pavucontrol|Xfce4-power-manager-settings|Nm-connection-editor"),
-        Match(wm_class="feh|Viewnior|Gpicview|Gimp|MPlayer|Vlc|Spotify"),
-        Match(wm_class="Kvantum Manager|qt5ct"),
-        Match(wm_class="VirtualBox Manager|qemu|Qemu-system-x86_64"),
+        Match(wm_class="alacritty-float"),
+        Match(wm_class="kitty-float"),
+        Match(wm_class="Music"),
+        Match(wm_class="Lxappearance"),
+        Match(wm_class="Nitrogen"),
+        Match(wm_class="Pavucontrol"),
+        Match(wm_class="Xfce4-power-manager-settings"),
+        Match(wm_class="Nm-connection-editor"),
+        Match(wm_class="feh"),
+        Match(wm_class="Viewnior"),
+        Match(wm_class="Gpicview"),
+        Match(wm_class="Gimp"),
+        Match(wm_class="MPlayer"),
+        Match(wm_class="Vlc"),
+        Match(wm_class="Spotify"),
+        Match(wm_class="Kvantum Manager"),
+        Match(wm_class="qt5ct"),
+        Match(wm_class="qt6ct"),
+        Match(wm_class="VirtualBox Manager"),
+        Match(wm_class="qemu"),
+        Match(wm_class="Qemu-system-x86_64"),
         Match(title="branchdialog"),
     ]
 )
