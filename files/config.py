@@ -148,6 +148,7 @@ keys = [
     Key(
 		[mod], "m", 
 		lazy.spawn(rofi_applets + 'rofi_music'), 
+		#lazy.spawn(rofi_applets + 'rofi_spotify'), 
 		desc="Run music player applet"
 	),
     Key(
