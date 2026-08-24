@@ -1,4 +1,4 @@
-## Copyright (C) 2020-2025 Aditya Shakya <adi1090x@gmail.com>
+## Copyright (C) 2020-2026 Aditya Shakya <adi1090x@gmail.com>
 ##
 ## `qtile` configuration for Archcraft
 
@@ -807,6 +807,7 @@ floating_layout = layout.Floating(
         Match(wm_class="Pavucontrol"),
         Match(wm_class="Xfce4-power-manager-settings"),
         Match(wm_class="Nm-connection-editor"),
+        Match(wm_class="Catfish"),
         Match(wm_class="feh"),
         Match(wm_class="Viewnior"),
         Match(wm_class="Gpicview"),
@@ -820,6 +821,10 @@ floating_layout = layout.Floating(
         Match(wm_class="VirtualBox Manager"),
         Match(wm_class="qemu"),
         Match(wm_class="Qemu-system-x86_64"),
+        Match(wm_class="archcraft-help"),
+        Match(wm_class="archcraft-welcome"),
+        Match(wm_class="calamares"),
+        Match(wm_class="Calamares"),
         Match(title="branchdialog"),
     ]
 )
